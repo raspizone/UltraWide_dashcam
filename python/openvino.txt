@@ -1,0 +1,10 @@
+
+
+OpenVINO
+
+python3 -m pip install openvino
+
+%%%GPU
+
+sudo apt install intel-opencl-icd
+
