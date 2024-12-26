@@ -37,8 +37,8 @@ captures = [cv2.VideoCapture(path) for path in video_paths]
 # Dimensiones de la resolución final
 final_width = 1280
 final_height = 400
-individual_width = 426  # Ancho de cada video
-individual_height = 240  # Alto de cada video
+individual_width = 320 # Ancho de cada video  426*240 para 3 entradas
+individual_height = 180  # Alto de cada video 
 
 # Lista de clases para la detección
 class_list = []
@@ -50,6 +50,7 @@ def crop_and_resize(frame, target_width, target_height):
     return cv2.resize(frame, (target_width, target_height))
 
 # Contador de fotogramas y detecciones previas
+n_sources = 4 #ajustar tamaño individual
 frame_counter = 0
 analyze_interval = 5
 previous_detections = []
@@ -61,7 +62,7 @@ def process_video(window):
         start_time = time.time()
 
         frames = []
-        for i in range(3):
+        for i in range(n_sources):
             capture = captures[(i + shift) % len(captures)]
             ret, frame = capture.read()
             
@@ -71,7 +72,7 @@ def process_video(window):
             else:
                 capture.set(cv2.CAP_PROP_POS_FRAMES, 0)
 
-        if len(frames) == 3:
+        if len(frames) == n_sources:
             combined_frame = cv2.hconcat(frames)
             if not paused:
                 if frame_counter % analyze_interval == 0:
