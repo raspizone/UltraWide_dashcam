@@ -3,6 +3,7 @@
 OpenVINO
 
 python3 -m pip install openvino
+pip install openvino-dev
 
 %%%GPU
 
