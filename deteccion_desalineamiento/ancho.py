@@ -33,7 +33,7 @@ def encontrar_rectangulo(mascara):
     return x, y, ancho, alto
 
 # Cargar la imagen de prueba
-img = cv2.imread("/media/sf_sharedVBOX/yolov5-opencv-cpp-python-main/python/aligned.jpg")
+img = cv2.imread("/media/sf_sharedVBOX/yolov5-opencv-cpp-python-main/python/diferencia.jpg")
 
 
 # Verificar que la imagen se haya cargado correctamente
