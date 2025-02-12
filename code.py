@@ -23,8 +23,8 @@ def check_available_cameras(max_index=5):
 paused = False
 captures = []
 CAMERA = False
-model_path = r"C:\Users\Larkbox X\Downloads\coral.zip-20250112T114343Z-001\coral\coral\coral\pycoral\test_data\ssd_mobilenet_v2_coco_quant_postprocess_edgetpu.tflite"
-label_path = r"C:\Users\Larkbox X\Downloads\coral.zip-20250112T114343Z-001\coral\coral\coral\pycoral\test_data\coco_labels.txt"
+model_path = r"C:\Users\model.tflite"
+label_path = r"C:\Users\coco_labels.txt"
 interpreter = make_interpreter(model_path)
 interpreter.allocate_tensors()
 labels = read_label_file(label_path)
@@ -33,10 +33,10 @@ if CAMERA:
     video_paths = check_available_cameras()
 else:
     video_paths = [
-        r"C:\Users\Larkbox X\Downloads\coral.zip-20250112T114343Z-001\coral\coral\coral\pycoral\test_data\video1.mp4",
-        r"C:\Users\Larkbox X\Downloads\coral.zip-20250112T114343Z-001\coral\coral\coral\pycoral\test_data\video2.mp4",
-        r"C:\Users\Larkbox X\Downloads\coral.zip-20250112T114343Z-001\coral\coral\coral\pycoral\test_data\video3.mp4",
-        r"C:\Users\Larkbox X\Downloads\coral.zip-20250112T114343Z-001\coral\coral\coral\pycoral\test_data\video1.mp4"
+        r"C:\Users\video1.mp4",
+        r"C:\Users\video2.mp4",
+        r"C:\Users\video3.mp4",
+        r"C:\Users\video4.mp4"
     ]
 
 def initialize_cameras(video_paths):
